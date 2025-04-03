@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аниме</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/anime.css') }}">
+</head>
+<body>
+    <h1>Список аниме</h1>
+
+    <!-- Кнопки -->
+    <div class="buttons-container">
+        <button id="add-anime-btn"><i class="fa-solid fa-plus"></i> Добавить</button>
+        <button id="mark-as-watched-btn" disabled><i class="fa-solid fa-check"></i> Просмотрено</button>
+        <button id="delete-anime-btn" disabled><i class="fa-solid fa-trash"></i> Удалить</button>
+        <button id="open-link-btn" disabled><i class="fa-solid fa-link"></i> Ссылка</button>
+    </div>
+
+    <!-- Таблица -->
+    <table id="anime-table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Рейтинг</th>
+                <th>Кол-во серий</th>
+                <th>Вышло</th>
+                <th>Жанры</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for anime in anime_list %}
+            <tr data-id="{{ anime[0] }}" data-url="{{ anime[6] }}" data-name="{{ anime[1] }}" data-episodecount="{{ anime[3] }}">
+                <td>{{ anime[1] }}</td>
+                <td>{{ anime[2] }}</td>
+                <td>{{ anime[3] }}</td>
+                <td class="icon">
+                    {% if anime[4] == 1 %}
+                        ✅ <!-- Галочка -->
+                    {% else %}
+                        ❌ <!-- Крестик -->
+                    {% endif %}
+                </td>
+                <td>{{ anime[7] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Модальное окно для добавления аниме -->
+    <div id="add-modal" class="modal">
+        <div class="modal-content">
+            <h2>Добавить аниме</h2>
+            <input type="text" id="anime-url" placeholder="Введите URL аниме" />
+            <button id="load-anime-btn">Загрузить</button>
+            <button id="cancel-btn">Отмена</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно для просмотра ссылок -->
+    <div id="link-modal" class="modal">
+        <div class="modal-content">
+            <h2>Выберите ссылку</h2>
+            <a id="original-link" href="#" target="_blank" class="modal-link"></a>
+            <a id="vk-link" href="#" target="_blank" class="modal-link"></a>
+            <button id="close-link-modal">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Подключение JavaScript -->
+    <script src="{{ url_for('static', filename='js/anime.js') }}"></script>
+</body>
+</html>

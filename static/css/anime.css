@@ -1,0 +1,200 @@
+/* Темная тема */
+body {
+    background-color: #121212; /* Темный фон */
+    color: #ffffff; /* Белый текст */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #ffcb05; /* Яркий акцентный цвет для заголовка */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #333333; /* Темная граница */
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #2b2b2b; /* Slightly lighter than body background */
+    color: #ffcb05; /* Акцентный цвет для заголовков */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #1a1a1a; /* Зебра для четных строк */
+}
+
+/* Стиль для выбранной строки */
+.selected-row {
+    background-color: #ffcb05 !important; /* Выделение выбранной строки */
+    color: #121212; /* Цвет текста для всей строки */
+}
+
+/* Специальный стиль для ссылок внутри выбранной строки */
+.selected-row a {
+    color: #121212 !important; /* Темный цвет для ссылок */
+    text-decoration: underline; /* Подчеркивание для лучшей заметности */
+}
+
+tbody tr:hover {
+    background-color: #333333; /* Подсветка при наведении */
+}
+
+a {
+    color: #ffcb05; /* Акцентный цвет для ссылок */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    font-size: 1.2em;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #333333;
+    width: 400px;
+    color: white;
+    max-height: 80vh; /* Ограничиваем высоту модального окна */
+    overflow-y: auto; /* Добавляем скролл, если контент не помещается */
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+.modal button {
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+.buttons-container {
+    margin-top: 20px;
+}
+
+.buttons-container button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    margin-bottom: 10px; /* Добавляем отступ снизу */
+    background-color: #ffcb05;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.buttons-container button:hover {
+    background-color: #f5c400;
+}
+
+#link-modal .modal-link {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #ffcb05;
+    color: #121212;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#link-modal .modal-link:hover {
+    background-color: #f5c400;
+}
+
+#mark-as-watched-btn {
+    background-color: #2ecc71; /* Зеленый */
+}
+
+#mark-as-watched-btn:hover {
+    background-color: #27ae60;
+}
+
+#delete-anime-btn {
+    background-color: #e74c3c; /* Красный */
+}
+
+#delete-anime-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Общие стили для маленьких экранов */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Уменьшаем отступы для мобильных устройств */
+    }
+
+    table {
+        font-size: 14px; /* Уменьшаем размер шрифта для таблицы */
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 8px; /* Уменьшаем отступы в ячейках таблицы */
+    }
+
+    .modal-content {
+        width: 90%; /* Сделаем модальное окно шире на маленьких экранах */
+        margin: 10% auto; /* Изменим позицию модального окна */
+    }
+
+    .modal input {
+        font-size: 14px; /* Уменьшим размер шрифта в полях ввода */
+    }
+
+    .buttons-container button {
+        font-size: 14px; /* Уменьшим размер кнопок */
+        padding: 8px 15px; /* Сделаем кнопки меньше */
+    }
+
+    #link-modal .modal-link {
+        font-size: 14px; /* Уменьшим размер ссылок */
+        padding: 8px;
+    }
+}
+
+/* Стили для планшетов */
+@media (min-width: 769px) and (max-width: 1024px) {
+    table {
+        font-size: 16px; /* Немного увеличим размер шрифта для планшетов */
+    }
+
+    .modal-content {
+        width: 80%; /* Модальное окно чуть уже */
+    }
+
+    .buttons-container button {
+        font-size: 16px; /* Размер кнопок для планшетов */
+    }
+}

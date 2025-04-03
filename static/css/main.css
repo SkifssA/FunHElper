@@ -1,0 +1,39 @@
+/* Темная тема */
+body {
+    background-color: #121212; /* Темный фон */
+    color: #ffffff; /* Белый текст */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, p {
+    color: #ffcb05; /* Яркий акцентный цвет */
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Стиль кнопок */
+.module-button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #121212;
+    background-color: #ffcb05;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.module-button:hover {
+    background-color: #f5c400;
+    transform: scale(1.05);
+}
