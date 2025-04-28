@@ -1,3 +1,9 @@
-"scripts": {
-  "start": "python3 -m flask run --host=0.0.0.0 --port=$PORT"
+{
+  "name": "flask-vercel-example",
+  "scripts": {
+    "start": "python3 -m flask run --host=0.0.0.0 --port=$PORT"
+  },
+  "engines": {
+    "node": "16.x"
+  }
 }
