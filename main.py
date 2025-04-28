@@ -9,7 +9,7 @@ app.register_blueprint(main_bp)
 app.register_blueprint(anime_bp, url_prefix='/anime')
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=5000)
+  app.run(debug=False)
 
 
 # Сделать более добавить больше кнопок и сделать их иконками
